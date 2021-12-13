@@ -12,22 +12,28 @@ public class InternalBoard {
     public static final char AI = '2';
     public static final char PLAYER = '1';
     public static final char EMPTY = '0';
+    private int emptyCells = 0;
 
-    public InternalBoard(char[][] board) {
+
+    public InternalBoard(char[][] board, int emptyCells) {
         this.board = Arrays.stream(board).map(char[]::clone).toArray(char[][]::new);
-
+        this.emptyCells = emptyCells;
     }
 
     public InternalBoard(Cell[][] guiBoard) {
         int width = guiBoard.length;
         int height = guiBoard[0].length;
         this.board = new char[height][width];
+        this.emptyCells = 0;
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 this.board[height - j - 1][i] = (guiBoard[i][j].getOccupied() == Config.Player.PLAYER ? PLAYER :
                         (guiBoard[i][j].getOccupied() == Config.Player.AI ? AI :
                                 EMPTY)
                 );
+                if (this.board[height - j - 1][i] == EMPTY) {
+                    this.emptyCells++;
+                }
             }
         }
     }
@@ -71,6 +77,7 @@ public class InternalBoard {
             return false;
         }
         board[row][col] = piece;
+        emptyCells--;
         return true;
     }
 
@@ -78,7 +85,7 @@ public class InternalBoard {
         List<InternalBoard> nextMoves = new ArrayList<>();
         for (int i = 0; i < board[0].length; i++) {
             if (canPlay(i)) {
-                InternalBoard nextBoard = new InternalBoard(board);
+                InternalBoard nextBoard = new InternalBoard(board, this.emptyCells);
                 nextBoard.addPiece(i, turn);
                 nextMoves.add(nextBoard);
             } else {
@@ -135,6 +142,10 @@ public class InternalBoard {
         return board[0].length;
     }
 
+    public int getEmptyCells() {
+        return emptyCells;
+    }
+
     public String hash() {
         String concatenate = "";
         for (int i = 0; i < height(); i++) {
@@ -144,5 +155,14 @@ public class InternalBoard {
         }
 //        System.out.println(concatenate);
         return concatenate;
+    }
+
+    public void printState() {
+        for (int i = 0; i < height(); i++) {
+            for (int j = 0; j < width(); j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

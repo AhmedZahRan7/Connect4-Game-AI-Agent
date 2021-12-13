@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86740c15-7560-475c-a7b8-f7864affb9cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/memorization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/Config.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/InternalBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/InternalBoard.class" afterDir="false" />
@@ -14,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/GameScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/InternalBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/InternalBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" afterDir="false" />
@@ -38,6 +36,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

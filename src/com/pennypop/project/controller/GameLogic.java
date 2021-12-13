@@ -6,7 +6,7 @@ import com.pennypop.project.GUI.GameScreen;
 
 public class GameLogic {
 	private final Board board;
-	private Config.Player turn = Config.Player.PLAYER;
+	private Config.Player turn = Config.Player.AI;
 	private int turnNo = 0; // track number of turns
 	private final AI ai; // may or may not be initialized depending on game type
 	private final GameScreen gui;
@@ -16,6 +16,9 @@ public class GameLogic {
 		this.board = board;
 		this.gui = gui;
 		ai = new AI(this);
+		if(turn == Config.Player.AI){
+			ai.makeMove(board.toInternalBoardGrid());
+		}
 	}
 	/**
 	 * This method consults game state to determine a valid move.
@@ -48,7 +51,6 @@ public class GameLogic {
 				turn = turn == Config.Player.AI? Config.Player.PLAYER : Config.Player.AI;
 				if (turn == Config.Player.AI) {
 					ai.makeMove(board.toInternalBoardGrid());
-					System.out.println(board.toInternalBoardGrid().hash());
 				}
 				return true;
 			}

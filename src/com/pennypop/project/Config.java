@@ -6,5 +6,6 @@ public class Config {
         AI,
         EMPTY,
     }
-    public static int maxDepth = 10;
+    public static int THRESHOLD = -500;
+    public static int maxDepth = 12;
 }
