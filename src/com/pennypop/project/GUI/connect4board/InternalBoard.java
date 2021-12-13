@@ -19,10 +19,10 @@ public class InternalBoard {
     public InternalBoard(Cell[][] guiBoard) {
         int width = guiBoard.length;
         int height = guiBoard[0].length;
-        this.board = new char[width][height];
+        this.board = new char[height][width];
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                this.board[i][j] = (guiBoard[i][j].getOccupied() == Config.Player.PLAYER ? PLAYER :
+                this.board[height - j - 1][i] = (guiBoard[i][j].getOccupied() == Config.Player.PLAYER ? PLAYER :
                         (guiBoard[i][j].getOccupied() == Config.Player.AI ? AI :
                                 EMPTY)
                 );

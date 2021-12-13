@@ -77,7 +77,7 @@ public class AI {
         }
         int minValue = Integer.MAX_VALUE;
         int bestAction = 0;
-        List<InternalBoard> nextMoves = board.getNextMoves(InternalBoard.AI);
+        List<InternalBoard> nextMoves = board.getNextMoves(InternalBoard.PLAYER);
         for (int i = 0; i < nextMoves.size(); i++) {
             if (nextMoves.get(i) == null) continue;
             Data data = maximize(nextMoves.get(i), alpha, beta, currentDepth + 1);
