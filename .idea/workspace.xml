@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86740c15-7560-475c-a7b8-f7864affb9cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/InternalBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/zayady.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4AI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4AI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/ProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/ProjectApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/InternalBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/InternalBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/AI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/AI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/Data.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/Heurstic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/Heurstic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/InternalBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/InternalBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

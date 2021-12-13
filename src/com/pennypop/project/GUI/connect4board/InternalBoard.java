@@ -92,13 +92,20 @@ public class InternalBoard {
         if (isEmpty(row, col)) return false;
         char currentPlayer = board[row][col];
         for (int i = 0; i < 4; i++) {
-            if (row < 0 || row >= height() || col < 0 || col >= width() || board[row][col] != currentPlayer) return false;
+            if (row < 0 || row >= height() || col < 0 || col >= width() || board[row][col] != currentPlayer)
+                return false;
             row += rowDirection;
             col += colDirection;
         }
         return true;
     }
 
+    public int getCompleteFours(int row, int col) {
+        return (isCompleteFours(row, col, 0, 1) ? 1 : 0) +
+                (isCompleteFours(row, col, 1, 0) ? 1 : 0) +
+                (isCompleteFours(row, col, 1, 1) ? 1 : 0) +
+                (isCompleteFours(row, col, 1, -1) ? 1 : 0);
+    }
 
     public int height() {
         return board.length;

@@ -6,5 +6,5 @@ public class Config {
         AI,
         EMPTY,
     }
-    public static int maxDepth = 10;
+    public static int maxDepth = 5;
 }
