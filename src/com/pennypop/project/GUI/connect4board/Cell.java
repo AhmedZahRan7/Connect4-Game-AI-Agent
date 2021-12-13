@@ -46,7 +46,7 @@ public class Cell extends Image {
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 				// Call gameLogic to find where piece belongs and check game state
-				GameScreen.game.placePiece(indX, indY);
+				GameScreen.game.placePiece(indX);
 				return true;
 			}
 		});

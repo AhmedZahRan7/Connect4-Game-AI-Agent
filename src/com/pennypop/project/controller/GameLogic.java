@@ -10,7 +10,7 @@ public class GameLogic {
 	private int turnNo = 0; // track number of turns
 	private final AI ai; // may or may not be initialized depending on game type
 	private final GameScreen gui;
-	private boolean gameOver = false;
+//	private boolean gameOver = false;
 
 	public GameLogic(Board board,GameScreen gui) {
 		this.board = board;
@@ -24,13 +24,13 @@ public class GameLogic {
 	 * 
 	 * @param x
 	 *            coordinate of selected player Cell
-	 * @param y
+//	 * @param y
 	 *            coordinate of selected player Cell
 	 * @return true if there's a valid move based on player input, false
 	 *         otherwise
 	 */
-	public boolean placePiece(int x, int y) {
-		if (gameOver) return false;
+	public boolean placePiece(int x) {
+//		if (gameOver) return false;
 		// We search the selected column for an available position to drop the
 		// piece starting from the bottom
 		for (int i = 0; i < board.getHeight(); i++) {
@@ -48,7 +48,8 @@ public class GameLogic {
 				}
 				turn = turn == Config.Player.AI? Config.Player.PLAYER : Config.Player.AI;
 				if (turn == Config.Player.AI) {
-					ai.makeMove();
+					ai.makeMove(board.toInternalBoardGrid());
+
 				}
 				return true;
 			}
@@ -57,34 +58,9 @@ public class GameLogic {
 	}
 
 	public void victory(Config.Player player) {
-		gameOver = true;
+//		gameOver = true;
 		gui.showWinner(player);
 	}
-	/**
-	 * Checks for win condition.
-	 * 
-	 * Win is met when either player accumulates more than 'n' consecutive
-	 * pieces on the board in vertical, horizontal, or diagonal orientation.
-	 * 
-	 * Is called after every player move
-	 * 
-	 * Simply takes the position of the most recently placed game piece and
-	 * checks the row, column, and diagonals branching from that piece for
-	 * victory condition.
-	 * 
-	 * Note: This function doesn't really need to keep track of maxConsec But I
-	 * was guessing max-consecutive pieces would be used as a heuristic for the
-	 * AI to be implemented later
-	 * 
-	 * @param n
-	 *            how many consecutive pieces are needed for win. Usually set to
-	 *            4
-	 * @param x
-	 *            X coordinate of most recently placed piece
-	 * @param y
-	 *            Y coordinate of most recently placed piece
-	 * @return max consecutives
-	 */
 	public int isVictory(int n, int x, int y) {
 		return 0;
 //		int maxConsec = 1;

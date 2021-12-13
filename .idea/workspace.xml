@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="86740c15-7560-475c-a7b8-f7864affb9cf" name="Changes" comment="" />
+    <list default="true" id="86740c15-7560-475c-a7b8-f7864affb9cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/InternalBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/zayady.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4AI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4AI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/ProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/ProjectApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/connect4board/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/Heurstic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/Heurstic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +56,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.233809" />
     <property name="project.structure.side.proportion" value="0.16454081" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -70,7 +96,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639326270583</updated>
+      <workItem from="1639385508608" duration="13841000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java</url>
+          <line>23</line>
+          <properties class="com.pennypop.project.ProjectApplication" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/pennypop/project/controller/heurstics/zayady.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

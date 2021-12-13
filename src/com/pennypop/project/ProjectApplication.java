@@ -8,6 +8,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.graphics.GL20;
 import com.pennypop.project.GUI.GameScreen;
 import com.pennypop.project.controller.heurstics.WeightedPlacesHeurstic;
+//import com.pennypop.project.controller.heurstics.zayady;
 
 /**
  * The {@link ApplicationListener} for this project, create(), resize() and
@@ -21,8 +22,15 @@ public class ProjectApplication extends Game {
 	public static ProjectApplication app;
 
 	public static void main(String[] args) {
-		new WeightedPlacesHeurstic(6,7);
-//		new LwjglApplication(new ProjectApplication(), "Connect4", 800, 680, true);
+//		char[][] zoz = {
+//				{'0','0','0','0'},
+//				{'0','2','0','0'},
+//				{'0','0','0','0'},
+//				{'0','0','0','0'}
+//		};
+//		System.out.println(new zayady().evaluate(zoz));
+//		new WeightedPlacesHeurstic(6,7);
+		new LwjglApplication(new ProjectApplication(), "Connect4", 800, 680, true);
 	}
 
 	@Override
