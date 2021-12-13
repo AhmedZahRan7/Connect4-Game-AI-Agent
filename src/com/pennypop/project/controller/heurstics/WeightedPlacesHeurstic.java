@@ -4,7 +4,7 @@ import com.pennypop.project.GUI.connect4board.InternalBoard;
 
 public class WeightedPlacesHeurstic implements Heurstic {
     int[][] priorities;
-    final static int BONUS = 20;
+    final static int BONUS = 300;
 
     public WeightedPlacesHeurstic(int width, int height) {
         priorities = new int[height][width];
@@ -23,8 +23,8 @@ public class WeightedPlacesHeurstic implements Heurstic {
     }
 
     public int calcBonus(InternalBoard board, int row, int col) {
-        System.out.println("zharan");
-        System.out.println(board.getCompleteFours(row, col));
+//        System.out.println("zharan");
+//        System.out.println(board.getCompleteFours(row, col));
         return board.getCompleteFours(row, col);
     }
 

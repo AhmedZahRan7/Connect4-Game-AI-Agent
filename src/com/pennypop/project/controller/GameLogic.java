@@ -39,17 +39,16 @@ public class GameLogic {
 				// player's color
 				board.setOccupier(x,i,turn);
 				turnNo++;
-				if (isVictory(4, x, i) == 4) {
-					victory(turn);
-					return true;
-				}
 				if (turnNo == board.getHeight()*board.getWidth()) {
-					victory(Config.Player.EMPTY);
+					int player = board.toInternalBoardGrid().getPlayerScore();
+					int AIScore = board.toInternalBoardGrid().getAIScore();
+					gui.showResult(player,AIScore);
+//					victory(Config.Player.EMPTY);
 				}
 				turn = turn == Config.Player.AI? Config.Player.PLAYER : Config.Player.AI;
 				if (turn == Config.Player.AI) {
 					ai.makeMove(board.toInternalBoardGrid());
-
+					System.out.println(board.toInternalBoardGrid().hash());
 				}
 				return true;
 			}
@@ -57,11 +56,13 @@ public class GameLogic {
 		return false;
 	}
 
-	public void victory(Config.Player player) {
-//		gameOver = true;
-		gui.showWinner(player);
-	}
+//	public void victory(int player1) {
+////		gameOver = true;
+//		gui.showWinner(player);
+//
+//	}
 	public int isVictory(int n, int x, int y) {
+
 		return 0;
 //		int maxConsec = 1;
 //		int thisColor = board.getOccupier(x,y);

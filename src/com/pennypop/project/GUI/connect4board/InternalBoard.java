@@ -107,11 +107,42 @@ public class InternalBoard {
                 (isCompleteFours(row, col, 1, -1) ? 1 : 0);
     }
 
+    public int getPlayerScore() {
+        return getScore(PLAYER);
+    }
+
+    public int getAIScore() {
+        return getScore(AI);
+    }
+
+    private int getScore(char player) {
+        int score = 0;
+        for (int i = 0; i < height(); i++) {
+            for (int j = 0; j < width(); j++) {
+                if (board[i][j] == player) {
+                    score += getCompleteFours(i, j);
+                }
+            }
+        }
+        return score;
+    }
+
     public int height() {
         return board.length;
     }
 
     public int width() {
         return board[0].length;
+    }
+
+    public String hash() {
+        String concatenate = "";
+        for (int i = 0; i < height(); i++) {
+            for (int j = 0; j < width(); j++) {
+                concatenate = concatenate.concat("" + board[i][j]);
+            }
+        }
+//        System.out.println(concatenate);
+        return concatenate;
     }
 }
