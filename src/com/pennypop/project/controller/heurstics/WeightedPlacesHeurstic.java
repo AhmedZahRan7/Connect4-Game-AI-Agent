@@ -4,9 +4,9 @@ import com.pennypop.project.GUI.connect4board.InternalBoard;
 
 public class WeightedPlacesHeurstic implements Heurstic {
     int[][] priorities;
-
+    final static int BONUS = 20;
     public WeightedPlacesHeurstic(int width, int height) {
-        priorities = new int[width][height];
+        priorities = new int[height][width];
         fillPriorities();
     }
 
@@ -15,11 +15,17 @@ public class WeightedPlacesHeurstic implements Heurstic {
         int val = 0;
         for (int i = 0; i < board.height(); i++) {
             for (int j = 0; j < board.width(); j++) {
-                val += priorities[i][j] * (board.isAI(i, j) ? 1 : (board.isPlayer(i, j) ? -1 : 0));
+                val += priorities[i][j] * (board.isAI(i, j) ? 1 : (board.isPlayer(i, j) ? -1 : 0)) + calcBonus(board, i, j);
             }
         }
         return val;
     }
+
+    public int calcBonus(InternalBoard board, int row, int col) {
+        
+    }
+
+
 
     private void fillPriorities() {
         fillRows();

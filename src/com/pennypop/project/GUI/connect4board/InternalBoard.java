@@ -3,6 +3,7 @@ package com.pennypop.project.GUI.connect4board;
 import com.pennypop.project.Config;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,7 +14,8 @@ public class InternalBoard {
     public static final char EMPTY = '0';
 
     public InternalBoard(char[][] board) {
-        this.board = board.clone();
+        this.board = Arrays.stream(board).map(char[]::clone).toArray(char[][]::new);
+
     }
 
     public InternalBoard(Cell[][] guiBoard) {
@@ -85,6 +87,18 @@ public class InternalBoard {
         }
         return nextMoves;
     }
+
+    public boolean isCompleteFours(int row, int col, int rowDirection, int colDirection) {
+        if (isEmpty(row, col)) return false;
+        char currentPlayer = board[row][col];
+        for (int i = 0; i < 4; i++) {
+            if (row < 0 || row >= height() || col < 0 || col >= width() || board[row][col] != currentPlayer) return false;
+            row += rowDirection;
+            col += colDirection;
+        }
+        return true;
+    }
+
 
     public int height() {
         return board.length;

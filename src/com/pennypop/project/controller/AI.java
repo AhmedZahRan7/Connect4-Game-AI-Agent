@@ -6,8 +6,6 @@ import com.pennypop.project.controller.heurstics.Heurstic;
 import com.pennypop.project.controller.heurstics.WeightedPlacesHeurstic;
 
 import java.util.List;
-import java.util.Random;
-import java.util.Vector;
 
 /**
  * A really really bad connect 4 AI Just makes random moves for now
