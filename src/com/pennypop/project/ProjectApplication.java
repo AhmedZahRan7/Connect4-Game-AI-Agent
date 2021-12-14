@@ -6,9 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.graphics.GL20;
-import com.pennypop.project.GUI.GameScreen;
-import com.pennypop.project.controller.heurstics.WeightedPlacesHeurstic;
-//import com.pennypop.project.controller.heurstics.zayady;
+import com.pennypop.project.GUI.MainScreen;
 
 /**
  * The {@link ApplicationListener} for this project, create(), resize() and
@@ -22,14 +20,6 @@ public class ProjectApplication extends Game {
 	public static ProjectApplication app;
 
 	public static void main(String[] args) {
-//		char[][] zoz = {
-//				{'0','0','0','0'},
-//				{'0','2','0','0'},
-//				{'0','0','0','0'},
-//				{'0','0','0','0'}
-//		};
-//		System.out.println(new zayady().evaluate(zoz));
-//		new WeightedPlacesHeurstic(6,7);
 		new LwjglApplication(new ProjectApplication(), "Connect4", 800, 680, true);
 	}
 
@@ -38,7 +28,7 @@ public class ProjectApplication extends Game {
 		app = this;
 		Assets.load();
 		Assets.manager.finishLoading();
-		screen = new GameScreen();
+		screen = new MainScreen();
 		setScreen(screen);
 	}
 
@@ -58,7 +48,6 @@ public class ProjectApplication extends Game {
 	public void render() {
 		clearWhite();
 		super.render();
-		// screen.render(Gdx.graphics.getDeltaTime());
 	}
 
 	/** Clears the screen with a white color */

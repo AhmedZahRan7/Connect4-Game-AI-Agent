@@ -20,6 +20,9 @@ public class Assets {
 	public static final String YELLOW_TXT = "assets/yellow.png";
 	public static final String CLICK_SOUND = "assets/button_click.wav";
 	public static final String FONT = "assets/font.fnt";
+	public static final String GREY_BACK = "assets/Grey.png";
+	public static final String CURSOR = "assets/curser.png";
+	public static final String PLAY = "assets/play.png";
 
 	public static void load() {
 		manager.load(SFX_TXT, Texture.class);
@@ -34,6 +37,9 @@ public class Assets {
 		manager.load(YELLOW_TXT, Texture.class);
 		manager.load(CLICK_SOUND, Sound.class);
 		manager.load(FONT, BitmapFont.class);
+		manager.load(CURSOR, Texture.class);
+		manager.load(GREY_BACK, Texture.class);
+		manager.load(PLAY, Texture.class);
 	}
 
 	public static void dispose() {

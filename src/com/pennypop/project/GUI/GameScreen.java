@@ -26,29 +26,23 @@ public class GameScreen implements Screen {
     public static Screen screen;
     public static Skin skin;
     private final SpriteBatch spriteBatch;
-    private Board board;
-
-    public GameScreen() {
+    private final int width;
+    private final int height;
+    private final boolean withPruning;
+    public GameScreen(int width,int height,boolean withPruning,Skin skin) {
         GameScreen.screen = this;
+        this.width = width;
+        this.height = height;
+        this.withPruning = withPruning;
+        GameScreen.skin = skin;
         spriteBatch = new SpriteBatch();
-        stage = new Stage(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false, spriteBatch);
-        initSkin();
-        this.board = new Board(7, 6);
-        game = new GameLogic(board, this);
+        stage = new Stage(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true, spriteBatch);
+        Board board = new Board(this.width,this.height);
+        game = new GameLogic(board,this.withPruning, this);
     }
 
     public void showResult(Integer playerScore, Integer AIScore) {
         Label win;
-//		if (player == Config.Player.PLAYER) {
-//			win = new Label("VICTORY RED", skin, "colored");
-//			win.setColor(Color.RED);
-//		} else if (player == Config.Player.AI) {
-//			win = new Label("VICTORY YELLOW", sin, "colored");
-//			win.setColor(Color.YELLOW);
-//		} else {
-//			win = new Label("STALE MATE", skin, "colored");
-//			win.setColor(Color.DARK_GRAY);
-//		}
         win = new Label("player score : " + playerScore.toString() + " AI score : " + AIScore.toString(), skin, "colored");
         win.setColor(Color.DARK_GRAY);
 
@@ -74,32 +68,7 @@ public class GameScreen implements Screen {
      */
     public void reset() {
         GameScreen.screen.dispose();
-        ProjectApplication.app.setScreen(new GameScreen());
-    }
-
-    /**
-     * Defines the styles for various UI Widgets and stores them in the Skin
-     * variable
-     */
-    private void initSkin() {
-        // Create a font
-        BitmapFont font = Assets.manager.get(Assets.FONT);
-        skin = new Skin();
-        skin.add("default", font);
-
-        // Create label style with default red color
-        Label.LabelStyle labelStyle = new Label.LabelStyle(font, Color.RED);
-        skin.add("default", labelStyle);
-
-        // Create label with color to be chosen later
-        Label.LabelStyle coloredLabel = new Label.LabelStyle(font, Color.WHITE);
-        skin.add("colored", coloredLabel);
-
-        // Create Reset button style
-        ImageButton.ImageButtonStyle resetButtonStyle = new ImageButton.ImageButtonStyle();
-        resetButtonStyle.imageUp = new Image(Assets.manager.get(Assets.RESET_TXT, Texture.class)).getDrawable();
-        resetButtonStyle.imageDown = new Image(Assets.manager.get(Assets.BTN_DOWN_TXT, Texture.class)).getDrawable();
-        skin.add("resetButton", resetButtonStyle);
+        ProjectApplication.app.setScreen(new GameScreen(this.width,this.height,this.withPruning,GameScreen.skin));
     }
 
     @Override
@@ -116,7 +85,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        stage.setViewport(width, height, false);
+        stage.setViewport(width, height, true);
     }
 
     @Override

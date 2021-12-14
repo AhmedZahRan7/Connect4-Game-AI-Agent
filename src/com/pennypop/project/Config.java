@@ -7,5 +7,5 @@ public class Config {
         EMPTY,
     }
     public static int THRESHOLD = -500;
-    public static int maxDepth = 12;
+    public static int maxDepth = 8;
 }

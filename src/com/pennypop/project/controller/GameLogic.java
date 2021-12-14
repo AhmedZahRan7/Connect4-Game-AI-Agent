@@ -12,10 +12,10 @@ public class GameLogic {
 	private final GameScreen gui;
 //	private boolean gameOver = false;
 
-	public GameLogic(Board board,GameScreen gui) {
+	public GameLogic(Board board,boolean withPruning,GameScreen gui) {
 		this.board = board;
 		this.gui = gui;
-		ai = new AI(this);
+		ai = new AI(withPruning,this);
 		if(turn == Config.Player.AI){
 			ai.makeMove(board.toInternalBoardGrid());
 		}

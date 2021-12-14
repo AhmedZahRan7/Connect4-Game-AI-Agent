@@ -62,7 +62,7 @@ public class AI {
     static Vector<HashMap<String, Data>> memo;
     private int rootValue = 0;
 
-    public AI(GameLogic g) {
+    public AI(boolean withPruning,GameLogic g) {
         memo = new Vector<>();
         memo.setSize(Config.maxDepth + 1);
         for (int i = 0; i < Config.maxDepth + 1; i++) {
