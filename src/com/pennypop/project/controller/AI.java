@@ -9,20 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
 
-/**
- * A really really bad connect 4 AI Just makes random moves for now
- * <p>
- * I plan on adding the 'intelligence' part of AI later, but currently I'm out
- * of time This class is mostly intended to show that my Game model is
- * compatible with AI
- *
- * @author Kevin
- */
-//  5
-//
-//
-//
-//
 
 class Data {
     private int val;
@@ -31,11 +17,7 @@ class Data {
     public int getVal() {
         return val;
     }
-
-    public void setVal(int val) {
-        this.val = val;
-    }
-
+    
     public Data(int col, int val) {
         this.col = col;
         this.val = val;
@@ -48,10 +30,6 @@ class Data {
     public int getCol() {
         return col;
     }
-
-    public void setCol(int col) {
-        this.col = col;
-    }
 }
 
 
@@ -61,8 +39,10 @@ public class AI {
     Heurstic heurstic;
     static Vector<HashMap<String, Data>> memo;
     private int rootValue = 0;
+    final private boolean withPruning;
 
     public AI(boolean withPruning,GameLogic g) {
+        this.withPruning = withPruning;
         memo = new Vector<>();
         memo.setSize(Config.maxDepth + 1);
         for (int i = 0; i < Config.maxDepth + 1; i++) {
@@ -103,7 +83,7 @@ public class AI {
                 bestAction = i ;
                 preHeoristice = currentHeurstic;
             }
-            if (minValue <= alpha) {
+            if (withPruning&&minValue <= alpha) {
                 break;
             }
             beta = Math.min(beta, minValue);
@@ -126,11 +106,9 @@ public class AI {
         int bestAction = -1;
         int preHurestic = Integer.MIN_VALUE;
         int currentVal = heurstic.evaluate(board);
-        if (currentVal - rootValue < Config.THRESHOLD) {
+        if (withPruning && currentVal - rootValue < Config.THRESHOLD) {
             Data ret = new Data(currentVal, maxValue);
             memo.get(currentDepth).put(concatonate, ret);
-//            System.out.println("zharan is " + currentVal);
-//            board.printState();
             return ret;
         }
         List<InternalBoard> nextMoves = board.getNextMoves(InternalBoard.AI);
@@ -138,11 +116,6 @@ public class AI {
             if (nextMoves.get(i) == null) continue;
             Data data = minimize(nextMoves.get(i), alpha, beta, currentDepth + 1);
             int currentHeurstic = heurstic.evaluate(nextMoves.get(i));
-            if (currentDepth == 0) {
-//                System.out.println(data.getVal());
-//                System.out.println(heurstic.evaluate(nextMoves.get(i)));
-//                nextMoves.get(i).printState();
-            }
             if (data.getVal() > maxValue) {
                 maxValue = data.getVal();
                 bestAction = i;
@@ -151,7 +124,7 @@ public class AI {
                 bestAction = i;
                 preHurestic = currentHeurstic;
             }
-            if (maxValue >= beta) {
+            if (withPruning && maxValue >= beta) {
                 break;
             }
             alpha = Math.max(alpha, maxValue);
@@ -160,8 +133,6 @@ public class AI {
         memo.get(currentDepth).put(concatonate, ret);
         return ret;
     }
-
-
     public void makeMove(InternalBoard board) {
         int col = decision(board);
         g.placePiece(col);
