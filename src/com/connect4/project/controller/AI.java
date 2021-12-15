@@ -62,13 +62,13 @@ public class AI {
     public int decision(InternalBoard board) { // from 0  to #col
         this.numberOfExpansionNodes = 0;
         System.out.println("\nAgent is thinking....");
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         // calculating the evaluation of the original board, to compare it later with next steps.
         rootValue = heurstic.evaluate(board);
         int step = maximize(board, Integer.MIN_VALUE, Integer.MAX_VALUE, 0).getCol();
         // logging
         System.out.println("Number of expanded nodes: " + numberOfExpansionNodes);
-        System.out.println("Time agent took to make a decision: " + ((System.nanoTime() - start) / 1e6) + " ms");
+        System.out.println("Time agent took to make a decision: " + ((System.currentTimeMillis() - start)) + " ms");
 
         return step;
     }
