@@ -1,5 +1,4 @@
 package com.pennypop.project.controller.heurstics;
-
 import com.pennypop.project.GUI.connect4board.InternalBoard;
 
 public class WeightedPlacesHeurstic implements Heurstic {
@@ -16,11 +15,11 @@ public class WeightedPlacesHeurstic implements Heurstic {
         int val = 0;
         for (int i = 0; i < board.height(); i++) {
             for (int j = 0; j < board.width(); j++) {
-                int bouns = calcBonus(board, i, j);
+                int bonus = calcBonus(board, i, j);
                 if(board.isPlayer(i,j)){
-                    val-= bouns * BONUS;
+                    val-= bonus * BONUS;
                 }
-                val += (priorities[i][j] + BONUS * bouns) * (board.isAI(i, j) ? 1 : (board.isPlayer(i, j) ? -1 : 0));
+                val += (priorities[i][j] + BONUS * bonus) * (board.isAI(i, j) ? 1 : (board.isPlayer(i, j) ? -1 : 0));
             }
         }
         return val;

@@ -20,19 +20,7 @@ public class Cell extends Image {
 	private final Image img;
 	private Config.Player occupied = Config.Player.EMPTY; // 0 = none, -1 = red, 1 = yellow
 
-	/**
-	 * Constructor for Cell. Cell holds an image to represent itself on a grid,
-	 * and some game information
-	 * 
-	 * @param indX
-	 *            X index
-	 * @param indY
-	 *            Y index
-	 * @param x
-	 *            image X position
-	 * @param y
-	 *            image Y position
-	 */
+
 	public Cell(final int indX, final int indY, int x, int y) {
 		this.stage = GameScreen.stage;
 		this.indX = indX;
@@ -53,9 +41,7 @@ public class Cell extends Image {
 	}
 	/**
 	 * Sets a game piece in the Cell
-	 * 
-	 * @param color:
-	 *            the color of the piece ( -1 = red, 1 = yellow )
+	 * @param color: the color of the piece ( -1 = red, 1 = yellow )
 	 */
 	public void setCell(Config.Player color) {
 		Sound sound = Assets.manager.get(Assets.CLICK_SOUND);
@@ -72,7 +58,6 @@ public class Cell extends Image {
 	}
 	/**
 	 * Checks which player occupies this Cell
-	 * 
 	 * @return integer between -1 and 1. -1 = red, 0 = empty, 1 = yellow
 	 */
 	public Config.Player getOccupied() {

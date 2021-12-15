@@ -11,7 +11,7 @@ import java.util.Vector;
 
 
 class Data {
-    private int val;
+    private final int val;
     private int col;
 
     public int getVal() {
@@ -34,8 +34,8 @@ class Data {
 
 
 public class AI {
-    private GameLogic g;
-    int k;
+    private final GameLogic gameLogis;
+    int MAX_DEPTH;
     Heurstic heurstic;
     static Vector<HashMap<String, Data>> memo;
     private int rootValue = 0;
@@ -45,96 +45,114 @@ public class AI {
         this.withPruning = withPruning;
         memo = new Vector<>();
         memo.setSize(Config.maxDepth + 1);
+
+        // initializing the memory.
         for (int i = 0; i < Config.maxDepth + 1; i++) {
-            memo.set(i, new HashMap<String, Data>());
+            memo.set(i, new HashMap<>());
         }
-        this.g = g;
-        this.k = Config.maxDepth;
+
+        this.gameLogis = g;
+        this.MAX_DEPTH = Config.maxDepth;
+        // getting the heuristic, we can add more later.
         heurstic = new WeightedPlacesHeurstic(g.getNumColumns(), g.getNumRows());
     }
 
 
     public int decision(InternalBoard board) { // from 0  to #col
+        // calculating the evaluation of the original board, to compare it later with next steps.
         rootValue = heurstic.evaluate(board);
         return maximize(board, Integer.MIN_VALUE, Integer.MAX_VALUE, 0).getCol();
     }
 
     private Data minimize(InternalBoard board, int alpha, int beta, int currentDepth) {
-        if (currentDepth >= Math.min(k, board.getEmptyCells())) {
+        // exceeds the predetermined depth.
+        if (currentDepth >= Math.min(MAX_DEPTH, board.getEmptyCells())) {
             return new Data(heurstic.evaluate(board));
         }
-        String concatonate = board.hash();
-        if (memo.get(currentDepth).containsKey(concatonate)) {
-            return memo.get(currentDepth).get(concatonate);
+        // getting the hash of the board.
+        String boardHash = board.hash();
+        if (memo.get(currentDepth).containsKey(boardHash)) {
+            return memo.get(currentDepth).get(boardHash);
         }
-        int minValue = Integer.MAX_VALUE;
-        int bestAction = -1;
-        int preHeoristice = Integer.MAX_VALUE;
+
+        int minValue = Integer.MAX_VALUE; // min answer till now
+        int bestAction = -1; // action to take
+        int prevHeuristic = Integer.MAX_VALUE; // to break ties.
+
         List<InternalBoard> nextMoves = board.getNextMoves(InternalBoard.PLAYER);
         for (int i = 0; i < nextMoves.size(); i++) {
             if (nextMoves.get(i) == null) continue;
-            int currentHeurstic = heurstic.evaluate(nextMoves.get(i));
+            // calculate it to choose the most promising board if there's a tie.
+            int currentHeuristic = heurstic.evaluate(nextMoves.get(i));
             Data data = maximize(nextMoves.get(i), alpha, beta, currentDepth + 1);
             if (data.getVal() < minValue) {
                 minValue = data.getVal();
                 bestAction = i;
-                preHeoristice = currentHeurstic;
-            }else if(data.getVal() == minValue && preHeoristice > currentHeurstic){
+                prevHeuristic = currentHeuristic;
+            }else if(data.getVal() == minValue && prevHeuristic > currentHeuristic){
                 bestAction = i ;
-                preHeoristice = currentHeurstic;
+                prevHeuristic = currentHeuristic;
             }
-            if (withPruning&&minValue <= alpha) {
+            // pruning
+            if (withPruning && minValue <= alpha) {
                 break;
             }
             beta = Math.min(beta, minValue);
         }
         Data ret = new Data(bestAction, bestAction == -1 ? Integer.MIN_VALUE : minValue);
-        memo.get(currentDepth).put(concatonate, ret);
+        memo.get(currentDepth).put(boardHash, ret);
         return ret;
     }
 
     private Data maximize(InternalBoard board, int alpha, int beta, int currentDepth) {
-        if (currentDepth >= Math.min(k, board.getEmptyCells())) {
+        // exceeds the predetermined depth.
+        if (currentDepth >= Math.min(MAX_DEPTH, board.getEmptyCells())) {
             return new Data(heurstic.evaluate(board));
         }
-        String concatonate = board.hash();
-        if (memo.get(currentDepth).containsKey(concatonate)) {
-            return memo.get(currentDepth).get(concatonate);
+        // getting the hash of the board.
+        String boardHash = board.hash();
+        if (memo.get(currentDepth).containsKey(boardHash)) {
+            return memo.get(currentDepth).get(boardHash);
         }
 
-        int maxValue = Integer.MIN_VALUE;
-        int bestAction = -1;
-        int preHurestic = Integer.MIN_VALUE;
-        int currentVal = heurstic.evaluate(board);
-        if (withPruning && currentVal - rootValue < Config.THRESHOLD) {
-            Data ret = new Data(currentVal, maxValue);
-            memo.get(currentDepth).put(concatonate, ret);
+        int maxValue = Integer.MIN_VALUE; // max answer till now
+        int bestAction = -1; // action to take
+        int prevHeuristic = Integer.MIN_VALUE; // to break ties.
+        int boardEvaluation = heurstic.evaluate(board);
+
+        // Comparing the board evaluation with root value, if we are doing so bad just trim the tree.
+        if (withPruning && boardEvaluation - rootValue < Config.THRESHOLD) {
+            Data ret = new Data(boardEvaluation, maxValue);
+            memo.get(currentDepth).put(boardHash, ret);
             return ret;
         }
+
         List<InternalBoard> nextMoves = board.getNextMoves(InternalBoard.AI);
         for (int i = 0; i < nextMoves.size(); i++) {
             if (nextMoves.get(i) == null) continue;
             Data data = minimize(nextMoves.get(i), alpha, beta, currentDepth + 1);
-            int currentHeurstic = heurstic.evaluate(nextMoves.get(i));
+            // calculate it to choose the most promising board if there's a tie.
+            int currentHeuristic = heurstic.evaluate(nextMoves.get(i));
             if (data.getVal() > maxValue) {
                 maxValue = data.getVal();
                 bestAction = i;
-                preHurestic = currentHeurstic;
-            } else if (data.getVal() == maxValue && currentHeurstic > preHurestic) {
+                prevHeuristic = currentHeuristic;
+            } else if (data.getVal() == maxValue && currentHeuristic > prevHeuristic) {
                 bestAction = i;
-                preHurestic = currentHeurstic;
+                prevHeuristic = currentHeuristic;
             }
             if (withPruning && maxValue >= beta) {
                 break;
             }
             alpha = Math.max(alpha, maxValue);
         }
+
         Data ret = new Data(bestAction, bestAction == -1 ? Integer.MAX_VALUE : maxValue);
-        memo.get(currentDepth).put(concatonate, ret);
+        memo.get(currentDepth).put(boardHash, ret);
         return ret;
     }
+
     public void makeMove(InternalBoard board) {
-        int col = decision(board);
-        g.placePiece(col);
+        gameLogis.placePiece(decision(board));
     }
 }

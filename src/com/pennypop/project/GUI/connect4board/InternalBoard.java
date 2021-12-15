@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class InternalBoard {
-    private char[][] board;
+    private final char[][] board;
     public static final char AI = '2';
     public static final char PLAYER = '1';
     public static final char EMPTY = '0';
@@ -38,26 +38,6 @@ public class InternalBoard {
         }
     }
 
-    public boolean isPlayer(int row, int col) {
-        return board[row][col] == PLAYER;
-    }
-
-    public boolean isAI(int row, int col) {
-        return board[row][col] == AI;
-    }
-
-    public boolean isEmpty(int row, int col) {
-        return board[row][col] == EMPTY;
-    }
-
-    public boolean addAI(int col) {
-        return addPiece(col, AI);
-    }
-
-    public boolean addPlayer(int col) {
-        return addPiece(col, PLAYER);
-    }
-
     private int getAvailableRow(int col) {
         for (int i = board.length - 1; i >= 0; i--) {
             if (isEmpty(i, col)) {
@@ -65,10 +45,6 @@ public class InternalBoard {
             }
         }
         return -1;
-    }
-
-    private boolean canPlay(int col) {
-        return getAvailableRow(col) != -1;
     }
 
     private boolean addPiece(int col, char piece) {
@@ -114,14 +90,6 @@ public class InternalBoard {
                 (isCompleteFours(row, col, 1, -1) ? 1 : 0);
     }
 
-    public int getPlayerScore() {
-        return getScore(PLAYER);
-    }
-
-    public int getAIScore() {
-        return getScore(AI);
-    }
-
     private int getScore(char player) {
         int score = 0;
         for (int i = 0; i < height(); i++) {
@@ -134,17 +102,6 @@ public class InternalBoard {
         return score;
     }
 
-    public int height() {
-        return board.length;
-    }
-
-    public int width() {
-        return board[0].length;
-    }
-
-    public int getEmptyCells() {
-        return emptyCells;
-    }
 
     public String hash() {
         String concatenate = "";
@@ -153,7 +110,6 @@ public class InternalBoard {
                 concatenate = concatenate.concat("" + board[i][j]);
             }
         }
-//        System.out.println(concatenate);
         return concatenate;
     }
 
@@ -164,5 +120,41 @@ public class InternalBoard {
             }
             System.out.println();
         }
+    }
+
+    private boolean canPlay(int col) {
+        return getAvailableRow(col) != -1;
+    }
+
+    public boolean isPlayer(int row, int col) {
+        return board[row][col] == PLAYER;
+    }
+
+    public boolean isAI(int row, int col) {
+        return board[row][col] == AI;
+    }
+
+    public boolean isEmpty(int row, int col) {
+        return board[row][col] == EMPTY;
+    }
+
+    public int getPlayerScore() {
+        return getScore(PLAYER);
+    }
+
+    public int getAIScore() {
+        return getScore(AI);
+    }
+
+    public int height() {
+        return board.length;
+    }
+
+    public int width() {
+        return board[0].length;
+    }
+
+    public int getEmptyCells() {
+        return emptyCells;
     }
 }
