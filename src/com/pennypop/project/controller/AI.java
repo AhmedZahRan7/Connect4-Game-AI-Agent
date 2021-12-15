@@ -34,12 +34,13 @@ class Data {
 
 
 public class AI {
-    private final GameLogic gameLogis;
+    private final GameLogic gameLogic;
     int MAX_DEPTH;
     Heurstic heurstic;
     static Vector<HashMap<String, Data>> memo;
     private int rootValue = 0;
     final private boolean withPruning;
+    private int numberOfExpansionNodes;
 
     public AI(boolean withPruning,GameLogic g) {
         this.withPruning = withPruning;
@@ -51,7 +52,7 @@ public class AI {
             memo.set(i, new HashMap<>());
         }
 
-        this.gameLogis = g;
+        this.gameLogic = g;
         this.MAX_DEPTH = Config.maxDepth;
         // getting the heuristic, we can add more later.
         heurstic = new WeightedPlacesHeurstic(g.getNumColumns(), g.getNumRows());
@@ -59,9 +60,17 @@ public class AI {
 
 
     public int decision(InternalBoard board) { // from 0  to #col
+        this.numberOfExpansionNodes = 0;
+        System.out.println("\nAgent is thinking....");
+        long start = System.nanoTime();
         // calculating the evaluation of the original board, to compare it later with next steps.
         rootValue = heurstic.evaluate(board);
-        return maximize(board, Integer.MIN_VALUE, Integer.MAX_VALUE, 0).getCol();
+        int step = maximize(board, Integer.MIN_VALUE, Integer.MAX_VALUE, 0).getCol();
+        // logging
+        System.out.println("Number of expanded nodes: " + numberOfExpansionNodes);
+        System.out.println("Time agent took to make a decision: " + ((System.nanoTime() - start) / 1e6) + " ms");
+
+        return step;
     }
 
     private Data minimize(InternalBoard board, int alpha, int beta, int currentDepth) {
@@ -78,7 +87,7 @@ public class AI {
         int minValue = Integer.MAX_VALUE; // min answer till now
         int bestAction = -1; // action to take
         int prevHeuristic = Integer.MAX_VALUE; // to break ties.
-
+        this.numberOfExpansionNodes++;
         List<InternalBoard> nextMoves = board.getNextMoves(InternalBoard.PLAYER);
         for (int i = 0; i < nextMoves.size(); i++) {
             if (nextMoves.get(i) == null) continue;
@@ -119,6 +128,7 @@ public class AI {
         int bestAction = -1; // action to take
         int prevHeuristic = Integer.MIN_VALUE; // to break ties.
         int boardEvaluation = heurstic.evaluate(board);
+        this.numberOfExpansionNodes++;
 
         // Comparing the board evaluation with root value, if we are doing so bad just trim the tree.
         if (withPruning && boardEvaluation - rootValue < Config.THRESHOLD) {
@@ -153,6 +163,6 @@ public class AI {
     }
 
     public void makeMove(InternalBoard board) {
-        gameLogis.placePiece(decision(board));
+        gameLogic.placePiece(decision(board));
     }
 }
