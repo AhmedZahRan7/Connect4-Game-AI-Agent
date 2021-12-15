@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86740c15-7560-475c-a7b8-f7864affb9cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/MainScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/AI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/AI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/Assets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/GUI/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/GUI/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/ProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/GameLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +76,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProjectApplication" />
@@ -114,6 +118,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
