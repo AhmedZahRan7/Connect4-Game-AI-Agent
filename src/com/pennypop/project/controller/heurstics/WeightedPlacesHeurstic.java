@@ -34,7 +34,6 @@ public class WeightedPlacesHeurstic implements Heurstic {
         fillRows();
         fillColumns();
         fillDiagonals();
-        printPriorities();
     }
 
     private void fillColumns() {
