@@ -8,4 +8,5 @@ public class Config {
     }
     public static int THRESHOLD = -500;
     public static int maxDepth = 8;
+    public static boolean DEBUG = true;
 }

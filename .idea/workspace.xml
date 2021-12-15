@@ -5,8 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86740c15-7560-475c-a7b8-f7864affb9cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gdx_audio_natives.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gdx_audio_natives.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_36_PM_[Default_Changelist]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_36_PM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_36_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_36_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4-Game-AI-Agent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4-Game-AI-Agent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4AI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4AI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/Assets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/Config$Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/GameScreen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/GameScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/MainScreen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/MainScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/Cell$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/GUI/connect4board/InternalBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/ProjectApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/AI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/GameLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/Heurstic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Connect4AI/com/pennypop/project/controller/heurstics/WeightedPlacesHeurstic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pennypop/project/controller/AI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +72,9 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="22C0TQTwxr0WbKD8smFXHmcZvSP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,17 +104,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
